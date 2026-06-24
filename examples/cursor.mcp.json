@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "wan": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@runapi.ai/wan-mcp"
+      ],
+      "env": {
+        "RUNAPI_API_KEY": "${RUNAPI_API_KEY}"
+      }
+    }
+  }
+}

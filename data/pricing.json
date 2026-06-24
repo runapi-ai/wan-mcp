@@ -1,0 +1,187 @@
+{
+  "endpoints": {
+    "wan-2.2-animate-move/animate": {
+      "unit_price_cents": 13,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "480p": 6,
+          "580p": 9.5,
+          "720p": 12.5
+        },
+        "duration_source": {
+          "kind": "response_body",
+          "path": "videos[0].url"
+        }
+      }
+    },
+    "wan-2.2-animate-replace/animate": {
+      "unit_price_cents": 13,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "480p": 6,
+          "580p": 9.5,
+          "720p": 12.5
+        },
+        "duration_source": {
+          "kind": "response_body",
+          "path": "videos[0].url"
+        }
+      }
+    },
+    "wan-2.6-edit-video/edit_video": {
+      "unit_price_cents": 14,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 14,
+          "1080p": 21
+        }
+      }
+    },
+    "wan-2.6-flash-edit-video/edit_video": {
+      "unit_price_cents": 30,
+      "billing_config": {
+        "key": "audio",
+        "overrides": {
+          "false": 30,
+          "true": 60
+        }
+      }
+    },
+    "wan-2.7-edit-video/edit_video": {
+      "unit_price_cents": 16,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 16,
+          "1080p": 24
+        }
+      }
+    },
+    "wan-2.2-a14b-image-to-video-turbo/image_to_video": {
+      "unit_price_cents": 40,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "480p": 40,
+          "580p": 60,
+          "720p": 80
+        }
+      }
+    },
+    "wan-2.5-image-to-video/image_to_video": {
+      "unit_price_cents": 12,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 12,
+          "1080p": 20
+        }
+      }
+    },
+    "wan-2.6-flash-image-to-video/image_to_video": {
+      "unit_price_cents": 30,
+      "billing_config": {
+        "key": "audio",
+        "overrides": {
+          "false": 30,
+          "true": 60
+        }
+      }
+    },
+    "wan-2.6-image-to-video/image_to_video": {
+      "unit_price_cents": 14,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 14,
+          "1080p": 21
+        }
+      }
+    },
+    "wan-2.7-image-to-video/image_to_video": {
+      "unit_price_cents": 16,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 16,
+          "1080p": 24
+        }
+      }
+    },
+    "wan-2.2-a14b-speech-to-video-turbo/speech_to_video": {
+      "unit_price_cents": 24,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "480p": 12,
+          "580p": 18,
+          "720p": 24
+        },
+        "duration_source": {
+          "kind": "response_body",
+          "path": "videos[0].url"
+        }
+      }
+    },
+    "wan-2.7-image/text_to_image": {
+      "unit_price_cents": 5
+    },
+    "wan-2.7-image-pro/text_to_image": {
+      "unit_price_cents": 12
+    },
+    "wan-2.2-a14b-text-to-video-turbo/text_to_video": {
+      "unit_price_cents": 40,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "480p": 40,
+          "580p": 60,
+          "720p": 80
+        }
+      }
+    },
+    "wan-2.5-text-to-video/text_to_video": {
+      "unit_price_cents": 12,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 12,
+          "1080p": 20
+        }
+      }
+    },
+    "wan-2.6-text-to-video/text_to_video": {
+      "unit_price_cents": 14,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 14,
+          "1080p": 21
+        }
+      }
+    },
+    "wan-2.7-r2v/text_to_video": {
+      "unit_price_cents": 16,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 16,
+          "1080p": 24
+        }
+      }
+    },
+    "wan-2.7-text-to-video/text_to_video": {
+      "unit_price_cents": 16,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 16,
+          "1080p": 24
+        }
+      }
+    }
+  }
+}
