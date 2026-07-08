@@ -45,7 +45,7 @@ describe("wan stdio MCP server", () => {
 
     const tools = await client.listTools();
     const names = tools.tools.map((tool) => tool.name).sort();
-    expect(names).toEqual(["animate","check_pricing","edit_video","get_task","image_to_video","speech_to_video","text_to_image","text_to_video"]);
+    expect(names).toEqual(["animate","check_pricing","edit_video","get_task","image_to_video","login","speech_to_video","text_to_image","text_to_video"]);
 
     const pricing = await client.callTool({ name: "check_pricing", arguments: {} });
     const content = pricing.content?.[0];
