@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.1.7](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.1.7) - 2026-07-20
+
+### Fixed
+- Reject `seed` for Wan 2.6 text-to-video and image-to-video tools using model-specific input rules.
+
+
 ## [v0.1.6](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.1.6) - 2026-07-08
 
 ### Fixed

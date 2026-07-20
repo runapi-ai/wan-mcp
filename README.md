@@ -1,7 +1,7 @@
 <h1 align="center">RunAPI Wan MCP Server</h1>
 
 <p align="center">
-  <strong>Wan API access for AI agents: create image and video generation tasks, poll results, and check pricing through one focused MCP server.</strong>
+  <strong>Wan API access for AI agents: run image and video generation operations, poll asynchronous results, and check pricing through one focused MCP server.</strong>
 </p>
 
 <p align="center">

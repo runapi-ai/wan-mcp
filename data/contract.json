@@ -23,39 +23,64 @@
     "wan/animate": {
       "model": "Wan",
       "endpoint": "animate",
+      "task_type": "asynchronous",
       "models": [
         "wan-2.2-animate-move",
         "wan-2.2-animate-replace"
       ],
       "fields_by_model": {
         "wan-2.2-animate-move": {
+          "model": {
+            "type": "string"
+          },
           "source_image_url": {
+            "type": "string",
             "required": true
           },
+          "reference_video_url": {
+            "type": "string",
+            "required": true
+          },
+          "callback_url": {
+            "type": "string"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "480p",
               "580p",
               "720p"
             ]
           },
-          "reference_video_url": {
-            "required": true
+          "enable_safety_checker": {
+            "type": "boolean"
           }
         },
         "wan-2.2-animate-replace": {
+          "model": {
+            "type": "string"
+          },
           "source_image_url": {
+            "type": "string",
             "required": true
           },
+          "reference_video_url": {
+            "type": "string",
+            "required": true
+          },
+          "callback_url": {
+            "type": "string"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "480p",
               "580p",
               "720p"
             ]
           },
-          "reference_video_url": {
-            "required": true
+          "enable_safety_checker": {
+            "type": "boolean"
           }
         }
       }
@@ -63,6 +88,7 @@
     "wan/edit-video": {
       "model": "Wan",
       "endpoint": "edit_video",
+      "task_type": "asynchronous",
       "models": [
         "wan-2.6-edit-video",
         "wan-2.6-flash-edit-video",
@@ -70,29 +96,151 @@
       ],
       "fields_by_model": {
         "wan-2.6-edit-video": {
-          "prompt": {
+          "model": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string"
+          },
+          "source_video_urls": {
+            "type": "array",
             "required": true
           },
+          "prompt": {
+            "type": "string",
+            "required": true
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_url": {
+            "type": "string"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
           },
-          "source_video_urls": {
-            "required": true
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
+          "audio_setting": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "multi_shots": {
+            "type": "boolean"
           }
         },
         "wan-2.6-flash-edit-video": {
-          "prompt": {
-            "required": true
+          "model": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string"
           },
           "source_video_urls": {
+            "type": "array",
             "required": true
+          },
+          "prompt": {
+            "type": "string",
+            "required": true
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_url": {
+            "type": "string"
+          },
+          "output_resolution": {
+            "type": "string"
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
+          "audio_setting": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "multi_shots": {
+            "type": "boolean"
           }
         },
         "wan-2.7-edit-video": {
+          "model": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string",
+            "required": true
+          },
+          "source_video_urls": {
+            "type": "array"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_url": {
+            "type": "string"
+          },
+          "output_resolution": {
+            "type": "string",
+            "enum": [
+              "720p",
+              "1080p"
+            ]
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "16:9",
               "9:16",
@@ -101,14 +249,29 @@
               "3:4"
             ]
           },
-          "source_video_url": {
-            "required": true
+          "duration_seconds": {
+            "type": "integer"
           },
-          "output_resolution": {
-            "enum": [
-              "720p",
-              "1080p"
-            ]
+          "audio_setting": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "multi_shots": {
+            "type": "boolean"
           }
         }
       }
@@ -116,6 +279,7 @@
     "wan/image-to-video": {
       "model": "Wan",
       "endpoint": "image_to_video",
+      "task_type": "asynchronous",
       "models": [
         "wan-2.2-a14b-image-to-video-turbo",
         "wan-2.5-image-to-video",
@@ -123,72 +287,356 @@
         "wan-2.6-image-to-video",
         "wan-2.7-image-to-video"
       ],
+      "rules": [
+        {
+          "when": {
+            "model": "wan-2.6-flash-image-to-video"
+          },
+          "forbidden": [
+            "seed"
+          ]
+        },
+        {
+          "when": {
+            "model": "wan-2.6-image-to-video"
+          },
+          "forbidden": [
+            "seed"
+          ]
+        }
+      ],
       "fields_by_model": {
         "wan-2.2-a14b-image-to-video-turbo": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "first_frame_image_url": {
+            "type": "string",
+            "required": true
+          },
+          "last_frame_image_url": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "480p",
               "720p"
             ]
           },
-          "first_frame_image_url": {
-            "required": true
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "multi_shots": {
+            "type": "boolean"
+          },
+          "driving_audio_url": {
+            "type": "string"
+          },
+          "background_audio_url": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
           }
         },
         "wan-2.5-image-to-video": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "first_frame_image_url": {
+            "type": "string",
+            "required": true
+          },
+          "last_frame_image_url": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string"
+          },
           "duration_seconds": {
+            "type": "integer",
             "required": true
           },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
           },
-          "first_frame_image_url": {
-            "required": true
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "multi_shots": {
+            "type": "boolean"
+          },
+          "driving_audio_url": {
+            "type": "string"
+          },
+          "background_audio_url": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
           }
         },
         "wan-2.6-flash-image-to-video": {
-          "audio": {
-            "required": true
+          "model": {
+            "type": "string"
           },
           "prompt": {
+            "type": "string",
             "required": true
           },
+          "callback_url": {
+            "type": "string"
+          },
+          "first_frame_image_url": {
+            "type": "string",
+            "required": true
+          },
+          "last_frame_image_url": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
           },
-          "first_frame_image_url": {
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean",
             "required": true
+          },
+          "multi_shots": {
+            "type": "boolean"
+          },
+          "driving_audio_url": {
+            "type": "string"
+          },
+          "background_audio_url": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
           }
         },
         "wan-2.6-image-to-video": {
+          "model": {
+            "type": "string"
+          },
           "prompt": {
+            "type": "string",
             "required": true
           },
+          "callback_url": {
+            "type": "string"
+          },
+          "first_frame_image_url": {
+            "type": "string",
+            "required": true
+          },
+          "last_frame_image_url": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
           },
-          "first_frame_image_url": {
-            "required": true
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "multi_shots": {
+            "type": "boolean"
+          },
+          "driving_audio_url": {
+            "type": "string"
+          },
+          "background_audio_url": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
           }
         },
         "wan-2.7-image-to-video": {
+          "model": {
+            "type": "string"
+          },
           "prompt": {
+            "type": "string",
             "required": true
           },
+          "callback_url": {
+            "type": "string"
+          },
+          "first_frame_image_url": {
+            "type": "string"
+          },
+          "last_frame_image_url": {
+            "type": "string"
+          },
+          "source_video_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "audio": {
+            "type": "boolean"
+          },
+          "multi_shots": {
+            "type": "boolean"
+          },
+          "driving_audio_url": {
+            "type": "string"
+          },
+          "background_audio_url": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
           }
         }
       }
@@ -196,26 +644,61 @@
     "wan/speech-to-video": {
       "model": "Wan",
       "endpoint": "speech_to_video",
+      "task_type": "asynchronous",
       "models": [
         "wan-2.2-a14b-speech-to-video-turbo"
       ],
       "fields_by_model": {
         "wan-2.2-a14b-speech-to-video-turbo": {
-          "prompt": {
+          "model": {
+            "type": "string"
+          },
+          "source_image_url": {
+            "type": "string",
             "required": true
           },
           "source_audio_url": {
+            "type": "string",
             "required": true
           },
-          "source_image_url": {
+          "prompt": {
+            "type": "string",
             "required": true
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "num_frames": {
+            "type": "integer"
+          },
+          "frames_per_second": {
+            "type": "integer"
           },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "480p",
               "580p",
               "720p"
             ]
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "num_inference_steps": {
+            "type": "integer"
+          },
+          "guidance_scale": {
+            "type": "number"
+          },
+          "shift": {
+            "type": "number"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
           }
         }
       }
@@ -223,13 +706,24 @@
     "wan/text-to-image": {
       "model": "Wan",
       "endpoint": "text_to_image",
+      "task_type": "asynchronous",
       "models": [
         "wan-2.7-image",
         "wan-2.7-image-pro"
       ],
       "fields_by_model": {
         "wan-2.7-image": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "16:9",
@@ -242,15 +736,53 @@
             ]
           },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "1k",
               "2k",
               "4k"
             ]
+          },
+          "output_count": {
+            "type": "integer"
+          },
+          "enable_sequential": {
+            "type": "boolean"
+          },
+          "thinking_mode": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "source_image_urls": {
+            "type": "array"
+          },
+          "color_palette": {
+            "type": "array"
+          },
+          "bbox_list": {
+            "type": "array"
           }
         },
         "wan-2.7-image-pro": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "1:1",
               "16:9",
@@ -263,11 +795,39 @@
             ]
           },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "1k",
               "2k",
               "4k"
             ]
+          },
+          "output_count": {
+            "type": "integer"
+          },
+          "enable_sequential": {
+            "type": "boolean"
+          },
+          "thinking_mode": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "source_image_urls": {
+            "type": "array"
+          },
+          "color_palette": {
+            "type": "array"
+          },
+          "bbox_list": {
+            "type": "array"
           }
         }
       }
@@ -275,6 +835,7 @@
     "wan/text-to-video": {
       "model": "Wan",
       "endpoint": "text_to_video",
+      "task_type": "asynchronous",
       "models": [
         "wan-2.2-a14b-text-to-video-turbo",
         "wan-2.5-text-to-video",
@@ -282,34 +843,219 @@
         "wan-2.7-r2v",
         "wan-2.7-text-to-video"
       ],
+      "rules": [
+        {
+          "when": {
+            "model": "wan-2.6-text-to-video"
+          },
+          "forbidden": [
+            "seed"
+          ]
+        }
+      ],
       "fields_by_model": {
         "wan-2.2-a14b-text-to-video-turbo": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "480p",
               "580p",
               "720p"
             ]
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_urls": {
+            "type": "array"
+          },
+          "reference_video_urls": {
+            "type": "array"
+          },
+          "first_frame_image_url": {
+            "type": "string"
+          },
+          "reference_audio_url": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "background_audio_url": {
+            "type": "string"
           }
         },
         "wan-2.5-text-to-video": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_urls": {
+            "type": "array"
+          },
+          "reference_video_urls": {
+            "type": "array"
+          },
+          "first_frame_image_url": {
+            "type": "string"
+          },
+          "reference_audio_url": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "background_audio_url": {
+            "type": "string"
           }
         },
         "wan-2.6-text-to-video": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_urls": {
+            "type": "array"
+          },
+          "reference_video_urls": {
+            "type": "array"
+          },
+          "first_frame_image_url": {
+            "type": "string"
+          },
+          "reference_audio_url": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "background_audio_url": {
+            "type": "string"
           }
         },
         "wan-2.7-r2v": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer",
+            "max": 10,
+            "min": 2
+          },
+          "output_resolution": {
+            "type": "string",
+            "enum": [
+              "720p",
+              "1080p"
+            ]
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "16:9",
               "9:16",
@@ -318,23 +1064,101 @@
               "3:4"
             ]
           },
-          "duration_seconds": {
-            "max": 10,
-            "min": 2
+          "ratio": {
+            "type": "string"
           },
-          "output_resolution": {
-            "enum": [
-              "720p",
-              "1080p"
-            ]
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_urls": {
+            "type": "array"
+          },
+          "reference_video_urls": {
+            "type": "array"
+          },
+          "first_frame_image_url": {
+            "type": "string"
+          },
+          "reference_audio_url": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "background_audio_url": {
+            "type": "string"
           }
         },
         "wan-2.7-text-to-video": {
+          "model": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
+          },
+          "duration_seconds": {
+            "type": "integer"
+          },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ]
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "ratio": {
+            "type": "string"
+          },
+          "negative_prompt": {
+            "type": "string"
+          },
+          "reference_image_urls": {
+            "type": "array"
+          },
+          "reference_video_urls": {
+            "type": "array"
+          },
+          "first_frame_image_url": {
+            "type": "string"
+          },
+          "reference_audio_url": {
+            "type": "string"
+          },
+          "enable_prompt_expansion": {
+            "type": "boolean"
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "acceleration": {
+            "type": "string"
+          },
+          "enable_safety_checker": {
+            "type": "boolean"
+          },
+          "watermark": {
+            "type": "boolean"
+          },
+          "background_audio_url": {
+            "type": "string"
           }
         }
       }

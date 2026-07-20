@@ -47,6 +47,11 @@ describe("wan stdio MCP server", () => {
     const names = tools.tools.map((tool) => tool.name).sort();
     expect(names).toEqual(["animate","check_pricing","edit_video","get_task","image_to_video","login","speech_to_video","text_to_image","text_to_video"]);
 
+    for (const endpoint of []) {
+      const tool = tools.tools.find((candidate) => candidate.name === endpoint);
+      expect(tool?.inputSchema.properties, `${endpoint} is synchronous and must not expose polling controls`).not.toHaveProperty("wait");
+    }
+
     const pricing = await client.callTool({ name: "check_pricing", arguments: {} });
     const content = pricing.content?.[0];
     if (!content || content.type !== "text") {
