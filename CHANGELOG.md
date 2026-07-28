@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.1.8](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.1.8) - 2026-07-28
+
+### Fixed
+- Use the complete Wan Flash image-to-video duration, resolution, and audio price schedule instead of coarse audio-only pricing.
+- Expose the supported duration values and request defaults for Wan Flash image-to-video tools.
+
+
 ## [v0.1.7](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.1.7) - 2026-07-20
 
 ### Fixed
