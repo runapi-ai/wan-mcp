@@ -74,14 +74,14 @@ Ready-made examples are in [`examples/`](examples/) for Claude, Cursor, Windsurf
 
 | Tool | Auth | Purpose |
 |---|---|---|
-| `animate` | Yes | Create a Wan animate task and optionally wait for a terminal status. Returns the task id, status, output URLs, and pricing snapshot. |
-| `edit_video` | Yes | Create a Wan edit video task and optionally wait for a terminal status. Returns the task id, status, output URLs, and pricing snapshot. |
-| `image_to_video` | Yes | Create a Wan image to video task and optionally wait for a terminal status. Returns the task id, status, output URLs, and pricing snapshot. |
-| `speech_to_video` | Yes | Create a Wan speech to video task and optionally wait for a terminal status. Returns the task id, status, output URLs, and pricing snapshot. |
-| `text_to_image` | Yes | Create a Wan text to image task and optionally wait for a terminal status. Returns the task id, status, output URLs, and pricing snapshot. |
-| `text_to_video` | Yes | Create a Wan text to video task and optionally wait for a terminal status. Returns the task id, status, output URLs, and pricing snapshot. |
+| `animate` | Yes | Create a Wan animate task and optionally wait for a terminal status. Returns the task id, status, and output URLs. |
+| `edit_video` | Yes | Create a Wan edit video task and optionally wait for a terminal status. Returns the task id, status, and output URLs. |
+| `image_to_video` | Yes | Create a Wan image to video task and optionally wait for a terminal status. Returns the task id, status, and output URLs. |
+| `speech_to_video` | Yes | Create a Wan speech to video task and optionally wait for a terminal status. Returns the task id, status, and output URLs. |
+| `text_to_image` | Yes | Create a Wan text to image task and optionally wait for a terminal status. Returns the task id, status, and output URLs. |
+| `text_to_video` | Yes | Create a Wan text to video task and optionally wait for a terminal status. Returns the task id, status, and output URLs. |
 | `get_task` | Yes | Fetch the current status and latest payload for an existing task. |
-| `check_pricing` | No | Look up the current pricing snapshot for a Wan model and endpoint. |
+| `check_pricing` | No | Look up current pricing for a Wan model and endpoint. |
 
 ---
 
