@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.2.0](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.2.0) - 2026-09-30
+
+### Changed
+- Send tool arguments to the service without local model, enum, range, required-field, or cross-field validation. Tool descriptions still list declared types and known values.
+  Migration: Invalid arguments now return the service's error, including its message, instead of a local tool-input rejection.
+- Reject multi_shots on the models that do not support it: wan-2.2-a14b turbo, wan-2.5, and the wan-2.7 text, reference, image, and edit models.
+  Migration: Send multi_shots only to a model that lists it.
+- Limit duration_seconds to 5 or 10 and require output_resolution for wan-2.5 on text_to_video and image_to_video, and require audio for wan-2.6-flash-edit-video.
+- Document the output_resolution defaults on animate, edit_video, image_to_video, speech_to_video, and text_to_video, and the 5-second duration_seconds default for wan-2.7-r2v.
+- Depend on @runapi.ai/mcp-core 0.4.5 and send task creation and lookup to each tool's published route.
+
+
 ## [v0.1.9](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.1.9) - 2026-07-31
 
 ### Changed
