@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.2.1](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.2.1) - 2026-10-15
+
+### Changed
+- Wan 2.7 Image text-to-image accepts 1k or 2k; 4k remains available on Wan 2.7 Image Pro.
+
+
 ## [v0.2.0](https://github.com/runapi-ai/wan-mcp/releases/tag/v0.2.0) - 2026-09-30
 
 ### Changed
