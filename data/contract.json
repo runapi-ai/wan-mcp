@@ -385,11 +385,11 @@
           },
           "duration_seconds": {
             "type": "integer",
+            "required": true,
             "enum": [
               5,
               10
-            ],
-            "required": true
+            ]
           },
           "output_resolution": {
             "type": "string",
